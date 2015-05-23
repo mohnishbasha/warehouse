@@ -25,8 +25,8 @@ Added
 </p>
 
 <p>
-Demo Link: <a href="https://github.com/mohnishbasha/InstagramClient/blob/master/InstaClient.gif"> <br> <br>
-<img border="0" alt="W3Schools" src="https://github.com/mohnishbasha/InstagramClient/blob/master/InstaClient.gif" width="100%" height="100%"> <br>
+Demo Link: <a href="https://github.com/mohnishbasha/warehouse/blob/master/warehouse.gif"> <br> <br>
+<img border="0" alt="W3Schools" src="https://github.com/mohnishbasha/warehouse/blob/master/warehouse.gif" width="100%" height="100%"> <br>
 </a>
 </p>
 
