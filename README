@@ -1,4 +1,14 @@
-This is your new Play application
-=====================================
+Warehouse Application using Play Framework
 
-This file will be packaged with your application, when using `play dist`.
+Warehouse Application using Play Framework & BootStrap.
+- Demonstrates
+- Controllers
+- Model
+- Views
+- Validations
+- Routes
+- BodyParsers
+- Formatters
+- Bindable Paths
+- File upload
+
