@@ -1,9 +1,13 @@
 package controllers;
 
+import com.google.common.io.Files;
 import models.Product;
 import models.Tag;
 import play.data.Form;
 import play.mvc.*;
+
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import views.html.products.details;
@@ -16,9 +20,13 @@ public class Products extends Controller {
 
     @BodyParser.Of(BodyParser.Json.class)
     public static Result index() {
+        return redirect(routes.Products.list(1));
+    }
 
-        Http.RequestBody body = request().body();
-        return ok("We expect to get json: " + body.asJson());
+    public static Result picture(String ean) {
+        final Product product = Product.findByEan(ean);
+        if(product == null) return notFound();
+        return ok(product.picture);
     }
 
 
@@ -60,6 +68,18 @@ public class Products extends Controller {
             }
         }
         product.tags = tags;
+
+        Http.MultipartFormData.FilePart part = body.getFile("picture");
+        if(part != null) {
+            File picture = part.getFile();
+            try {
+                product.picture = Files.toByteArray(picture);
+
+            } catch (IOException e) {
+                return internalServerError("Error reading file upload");
+            }
+
+        }
 
         product.save();
         flash("success",

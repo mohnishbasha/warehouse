@@ -33,6 +33,7 @@ public class Product implements PathBindable<Product>,
 
     public List<Tag> tags = new LinkedList<Tag>();
 
+    public byte[] picture;
 
     @DateFormat("yyyy-MM-dd")
     public Date peremptionDate = new Date();
